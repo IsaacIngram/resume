@@ -15,7 +15,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@v2
         with:
-          root_file: resume.tex
+          root_file: main.tex
       - name: Generate PDF
         uses: actions/upload-artifact@v2
         with:
