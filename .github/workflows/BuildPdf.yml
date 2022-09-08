@@ -1,0 +1,23 @@
+name: Build PDF
+
+on: 
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  
+jobs:
+  build_latex:
+  runs-on: ubuntu-latest
+  steps:
+    - name: Set up Git repository
+      uses: actions/checkout@v2
+    - name: Compile LaTeX document
+      uses: xu-cheng/latest-action@v2
+      with:
+        root_file: resume.tex
+    - name: Generate PDF
+      uses: actions/upload-artifact@v2
+      with:
+        name: PDF
+        path: resume.pdf
