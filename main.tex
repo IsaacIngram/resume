@@ -1,0 +1,297 @@
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+
+% Change the font if you want to, depending on whether
+% you're using pdflatex or xelatex/lualatex
+\ifxetexorluatex
+  % If using xelatex or lualatex:
+  \setmainfont{Roboto Slab}
+  \setsansfont{Lato}
+  \renewcommand{\familydefault}{\sfdefault}
+\else
+  % If using pdflatex:
+  \usepackage[rm]{roboto}
+  \usepackage[defaultsans]{lato}
+  % \usepackage{sourcesanspro}
+  \renewcommand{\familydefault}{\sfdefault}
+\fi
+
+% ----- LIGHT MODE -----
+\definecolor{SlateGrey}{HTML}{2E2E2E}
+\definecolor{LightGrey}{HTML}{666666}
+\definecolor{PrimaryColor}{HTML}{001F5A}
+\definecolor{SecondaryColor}{HTML}{0039AC}
+\definecolor{ThirdColor}{HTML}{dd5144}
+\definecolor{BackgroundColor}{HTML}{E2E2E2}
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{PrimaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{SlateGrey}
+\colorlet{body}{LightGrey}
+%\pagecolor{BackgroundColor}   
+% ----- DARK MODE -----
+%\definecolor{BackgroundColor}{HTML}{242424}
+%\definecolor{SlateGrey}{HTML}{6F6F6F}
+%\definecolor{LightGrey}{HTML}{ABABAB}
+%\definecolor{PrimaryColor}{HTML}{3F7FFF}
+%\colorlet{name}{PrimaryColor}
+%\colorlet{tagline}{PrimaryColor}
+%\colorlet{heading}{PrimaryColor}
+%\colorlet{headingrule}{PrimaryColor}
+%\colorlet{subheading}{PrimaryColor}
+%\colorlet{accent}{PrimaryColor}
+%\colorlet{emphasis}{LightGrey}
+%\colorlet{body}{LightGrey}
+%\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+
+    \columnratio{0.6}
+    
+    \name{Isaac Ingram}
+    \personalinfo{
+        \email{me@isaacingram.dev}
+        \newline
+        \homepage{isaacingram.dev}
+        \newline
+        \github{IsaacIngram}
+        \newline
+        \phone{(918)-728-1665}
+        \newline
+        \linkedin{isaac-ingram}
+    }
+    
+    %% \tagline{Test Developer}
+    %% You can add multiple photos on the left or right
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+    \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+
+    % Start a 2-column paracol. Both the left and right columns will automatically
+    % break across pages if things get too long.
+    % \begin{paracol}{2}
+    %     % ----- STRENGTHS -----
+    %     \cvsection{Languages}
+    %         \cvtag{Kotlin}
+    %         \cvtag{Python}
+    %         \cvtag{Rust}
+    %         \cvtag{Java}
+    %         \cvtag{SQL}
+    %     % ----- STRENGTHS -----
+        
+    %     \bigskip \bigskip \bigskip
+        
+    %     % ----- LEARNING -----
+    %     \cvsection{Libraries}
+    %         \cvtag{React.js}
+    %         \cvtag{React Native}
+    %         \cvtag{Pandas}
+    %         \cvtag{Rocket.rs}
+    %         \newline
+    %         \cvtag{Tensorflow}
+    %         \cvtag{Android Room}
+    %         \cvtag{Django}
+    %         \cvtag{Jetpack Compose}
+    %         \cvtag{Dagger}
+    %         \cvtag{Hilt}
+    %     % ----- LEARNING -----
+        
+    %     \bigskip \bigskip \bigskip
+        
+    %     % ----- LANGUAGES -----
+    %     \cvsection{Technologies}
+    %         \cvtag{Linux}
+    %         \cvtag{Git}
+    %         \cvtag{Vim}
+    %         \newline
+    %         \cvtag{Functional Programming}
+    %         \newline
+    %         \cvtag{WebSockets}
+    %         \newline
+    %     % ----- LANGUAGES -----
+        
+    %     \bigskip \bigskip \bigskip
+        
+    %     % ----- EXTRACURRICULARS -----
+    %     \cvsection{\fontsize{12}{14}\selectfont Extracurriculars}
+    %         \cvtag{Computer Science House}
+    %         \cvtag{Git}
+    %         \cvtag{Vim}
+    %         \newline
+    %         \cvtag{Functional Programming}
+    %         \newline
+    %         \cvtag{WebSockets}
+    %         \newline
+    %         \cvtag{Object-Oriented Programming}
+    %     % ----- EXTRACURRICULARS -----
+        
+    %     % ----- MOST PROUD -----
+    %     % \cvsection{Most Proud of}
+        
+    %     % \cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}\\
+    %     % \divider
+    %     % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}\\
+    %     % \divider
+    %     % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+    %     % ----- MOST PROUD -----
+        
+    %     % \cvsection{A Day of My Life}
+        
+    %     % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+    %     % \wheelchart{outer radius}{inner radius}{
+    %     % comma-separated list of value/text width/color/detail}
+    %     % \wheelchart{1.5cm}{0.5cm}{%
+    %     %   6/8em/accent!30/{Sleep,\\beautiful sleep},
+    %     %   3/8em/accent!40/Hopeful novelist by night,
+    %     %   8/8em/accent!60/Daytime job,
+    %     %   2/10em/accent/Sports and relaxation,
+    %     %   5/6em/accent!20/Spending time with family
+    %     % }
+        
+    %     % use ONLY \newpage if you want to force a page break for
+    %     % ONLY the current column
+    %     \newpage
+        
+    %     %% Switch to the right column. This will now automatically move to the second
+    %     %% page if the content is too long.
+    %     \switchcolumn
+    
+    
+
+    
+    % ----- EDUCATION -----
+    \begin{paracol}{2}
+    
+    \cvsection{Education}
+        \cvevent{BS Computer Science}{|\cvrepo{Rochester Institute of Technology}{https://www.rit.edu/}\newline}{2022 - 2026}{Rochester, New York} 
+    % ----- EDUCATION -----
+        
+    % ----- EXPERIENCE -----
+    
+    \cvsection{Work Experience}
+    
+    \cvevent{Barista}{|\cvrepo{Starbucks Coffee Company}{https://www.starbucks.com/}}{Feb 2021 -- Present}{}
+    Craft high quality beverages quickly even under high demand. Work with a team to ensure speed and order accuracy. Interact with customers to create a positive experience.   \smallskip \smallskip
+    \newline
+    \cvtag{Leadership} \cvtag{Teamwork} \cvtag{Professional Communication}
+    \newline
+    
+    % ----- EXPERIENCE -----
+    
+    \switchcolumn
+    
+    \cvsection{Languages}
+    \cvtag{\faJava Java} \cvtag{\faPython Python}
+    
+    \bigskip
+    \smallskip
+    
+    \cvsection{Technologies}
+    \cvtag{VSCode} \cvtag{JetBrains IDEs} \cvtag{Git} 
+    \cvtag{GitHub} \cvtag{Slack} \cvtag{Trello}
+    \cvtag{Arduino} \cvtag{Raspberry Pi} \cvtag{Motors} \cvtag{Sensors}
+    \cvtag{\faApple MacOS} \cvtag{\faWindows Windows} \cvtag{\faLinux Ubuntu}
+
+    \switchcolumn
+
+    % ----- PROJECTS -----
+    \cvsection{Projects}
+    \cvevent{RemindersToNotion}{\cvrepo{| \faGithub IsaacIngram/RemindersToNotion}{https://github.com/IsaacIngram/RemindersToNotion} }{}{}
+    An open source service for syncing tasks from Apple's Reminders application with databases on Notion.\smallskip \smallskip
+    \newline
+    \cvtag{Python}
+    \newline
+    \divider
+    
+    \cvevent{Rapid React Robot}{\cvrepo{\newline \faGithub CommandoRobotics/FRC \textunderscore Rapid \textunderscore React \textunderscore 2022}{https://github.com/CommandoRobotics/FRC_Rapid_React_2022}}{}{}
+    FIRST Robotics Competition robot that won the {\bf Innovation in Control Award} at the Green Country Regional for a sophisticated implementation of software to safely and accurately control mechanical systems. The robot was equipped with a variety of sensors for localization and targeting purposes, including a computer vision system for automatic adjustments to the trajectory of a projectile.\smallskip \smallskip
+    \newline
+    \cvtag{Java} \cvtag{C}
+    \newline
+    
+    \divider
+    
+    \cvevent{SiteScout}{\cvrepo{| \faGithub IsaacIngram/SiteScout}{https://github.com/IsaacIngram/SiteScout}}{}{}
+    A webscraping tool that checks for anything and can notify you when it changes. Utilizes Python Requests to get page information and notifies you of changes through a Discord bot. 
+    \smallskip \smallskip
+    \newline
+    \cvtag{Python}
+    \newline
+    
+    \divider
+    
+    \cvevent{Mother Road Detailing}{\cvrepo{| \faGithub IsaacIngram/MotherRoadDetailing}{https://github.com/IsaacIngram/MotherRoadDetailing}}{}{}
+    A website built for a vehicle detailing company utilizing an open-source \newline framework. Worked in HTML, CSS, and JavaScript to create a simple yet \newline pleasant and intuitive interface for viewing business information and pricing. \newline Utilized Netlify for hosting and automatic deployment.
+    \smallskip \smallskip
+    \newline
+    \cvtag{HTML} \cvtag{CSS} \cvtag{JavaScript} \cvtag{Netlify}
+    \newline
+    
+    
+    % ----- PROJECTS -----
+    
+    \switchcolumn
+    \bigskip
+    \bigskip
+    % ----- EXTRACURRICULARS -----
+    \cvsection{Activities}
+    
+    \cvevent{Computer Science House }{\cvrepo{\faGlobe csh.rit.edu}{https://csh.rit.edu}}{}{}
+    \smallskip
+    \begin{itemize}
+    \item {{\color{emphasis}Member} {{\color{accent}\faCalendar}\color{emphasis} August 2022 - Present}
+        \newline
+        \smallskip
+        Living-learning community \newline focused on sharing technical skills and knowledge.}
+    \end{itemize}
+    
+    \bigskip
+
+    \cvevent{FIRST Robotics}{\cvrepo{\newline \faGlobe firstinspires.org}{ https://www.firstinspires.org}}{}{}
+    \begin{itemize}
+    \item {{\color{emphasis}Team Captain} {{\color{accent}\faCalendar}\color{emphasis} September 2021 - March 2022}
+        \newline
+        \smallskip
+        Responsible for organizing and \newline leading the team. Scheduled and \newline ran meetings, advised the team, and \newline ensured everything came together in a timely manor.}
+    \newline
+    \divider
+    \newline
+    \item {{\color{emphasis}Lead Programmer} {\color{accent}\faCalendar\color{emphasis} September 2020 - March 2022}
+        \newline
+        \smallskip
+        Wrote a majority of the robot \newline code and managed contributions from other team members. Taught new students how to code and \newline collaborate effectively. Came up with complex software solutions \newline to assist drivers and enhance \newline mechanical systems.}
+    \end{itemize}
+        
+    \end{paracol}
+    % ----- EXTRACURRICULARS -----
+\end{document}
